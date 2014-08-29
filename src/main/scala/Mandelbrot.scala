@@ -21,8 +21,9 @@ object Orbit {
 
 object Mandelbrot {
   def main(args: Array[String]) {
-    val set = plane(z(-2, -1.1), z(0.5, 1.1), 80).map(_.map(c => Orbit(c).isBounded))
-    val ascii = set.map(_.map(if (_) '*' else ' ').mkString).mkString("\n")
+    val asciiRenderer = AsciiRenderer(0, MaxPoints)
+    val set = plane(z(-2, -1.1), z(0.5, 1.1), 80).map(_.map(c => Orbit(c).lenght - 1))
+    val ascii = set.map(_.map(asciiRenderer.render).mkString).mkString("\n")
     println(ascii)    
   }
 }
