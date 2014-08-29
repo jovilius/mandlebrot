@@ -6,19 +6,19 @@ import Complex._
 class ComplexSpec extends Specification {
 
   "Complex number" should {
-    "add correctly" in {
+    "add" in {
       z(1, 3) + z(2, 5) must beEqualTo(z(3, 8))
     }
-    "subtract correctly" in {
+    "subtract" in {
       z(1, 3) - z(2, 5) must beEqualTo(z(-1, -2))
     }
-    "multiply correcly" in {
+    "multiply" in {
       z(1, 3) * z(2, 5) must beEqualTo(z(-13, 11))
     }
-    "compute absolute value correctly" in {
+    "compute absolute value" in {
       !z(1, 3) must beEqualTo(3.1622776601683795)
     }
-    "show correcly" in {
+    "show" in {
       z(1, +2).toString must beEqualTo("1.0 + 2.0i")
       z(1, -2).toString must beEqualTo("1.0 - 2.0i")  
       z(1, 0).toString must beEqualTo("1.0 + 0.0i")
